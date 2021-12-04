@@ -1,0 +1,248 @@
+
+
+@font-face{
+    font-family:'pixel';
+    src: url('img/Ppixel.ttf');
+   }
+   
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+    color: #FBF3E4
+    #105652
+    #DFD8CA
+    #B91646
+}
+
+.contenInicio{
+    display:none;
+}
+.contenGame{
+    display: none;
+}
+@media screen  and (max-width:820px){
+.contenInicio{
+    
+    width: 100vw;
+    height: 100vh;
+    background-color: #FBF3E4;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    font-family:'pixel';
+   
+}
+
+
+.contenInicio1{
+    animation: animation1 1s linear;
+    animation-fill-mode:forwards;
+}
+
+.titulo{
+font-size:20VW;
+color:   #B91646 ;
+padding-bottom:25%;
+}
+
+.img{
+   opacity: 0.4;
+   transform: rotate(45deg);
+   padding-bottom: 30px; 
+/*   border: 1px solid red;*/
+}
+#botom{
+    display: block;
+    width: 70%;
+    height: 10%;
+    font-size: 10vw;
+    border-radius: 20px;
+    border-style: none;
+    color: white;
+    background-color:  #105652 ;
+    letter-spacing: 10px;
+    text-align: center;
+    font-family:'pixel';
+    -webkit-box-shadow: -1px 17px 125px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 17px 125px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 17px 125px 0px rgba(0,0,0,0.75);
+    animation: animation 1s linear infinite;
+
+}
+.loading{ 
+      
+   width:90vw ;
+   height:50px ;
+   background-color: chartreuse;
+   position: absolute;
+   top:60% ;
+   left:5%;
+   opacity: 0;
+   
+}
+
+.loading1{
+    animation: animation2 1.5s  linear infinite;  
+}
+
+
+
+@keyframes animation {
+    0%{color: #b91647b4 ;}
+    50%{color: white;}
+    100%{color: #b91647b4}
+}
+
+@keyframes animation1 {
+   0%{height:100vh;}
+   50%{height:0vh ;}
+   100%{ height:0vh;}
+}
+
+@keyframes animation2 {
+    0%{opacity: 1;width:5vw ;height:50px ;}
+    25%{opacity: 1;width:25vw ;height:50px ;}
+    50%{opacity: 1;width:50vw ;height:50px ;}
+    75%{opacity: 1;width:75vw ;height:50px ;}
+    100%{opacity: 1;width:90vw ;height:50px ;}
+ }
+ .hola{
+ color:
+ #105652
+    #DFD8CA
+    #B91646;
+ }
+ .contenGame{
+    display: none;
+}
+ .contenGame1{   
+  
+    padding: 0px 20px 0px 20px;    
+    width: 100vw;
+    height: 100vh;
+    background-color:  #DFD8CA ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'pixel';
+   
+}
+
+
+.displayG{
+    width: 100%;
+    height:70% ; 
+    padding: 10px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   background-color: #105652 ;
+    border-radius: 25px;
+  
+}
+.jugador1 ,.jugador2{
+    width:100%;
+    height: 15%;
+  
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+   
+}
+.jugador1{
+    transform: rotate(180deg);
+}
+
+.circulo{
+    width:40%;
+    height:100%;   
+      
+}
+.circulo span{
+    display: block;
+    width: 40%;
+    height: 60%;
+    border-radius: 50%;
+    background-color: #ff0000;
+    opacity:0.1 ; 
+    position: relative;
+    left: 30%;
+    top: 25%;
+}
+
+.texto{
+    width: 30%; ;
+    display: block;   
+    text-align: center;
+    font-size: 6vw;
+    color: #105652 ;
+   
+   
+    
+}
+.resultado1{
+    width:100%;
+    height: 20%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: #105652;
+   
+ 
+
+}
+.resultado{
+    border-bottom: 4px solid white;
+}
+.resultadoB{
+    border-top: 4px solid white;
+}
+.numero{
+    
+    font-size: 10vw;
+    color: white;
+   
+}
+.linea{
+    display: block;
+    width: 4px;
+    height:80% ;
+    border:1px solid white;
+    background-color: white;
+}
+.displayIMG{
+    width: 100%;
+    height: 60%;
+    background-color:#105652 ;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.dado{
+    width: 50%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.dado1{
+    border-right: 2px solid white;
+}
+.dado2{
+    border-left: 2px solid white;
+}
+.displayIMG IMG{
+  width:50% ;
+  height:30%;
+  opacity:0.5 ;
+}
+}
