@@ -111,18 +111,13 @@ padding-bottom:25%;
     75%{opacity: 1;width:75vw ;height:50px ;}
     100%{opacity: 1;width:90vw ;height:50px ;}
  }
- .hola{
- color:
- #105652
-    #DFD8CA
-    #B91646;
- }
+
  .contenGame{
     display: none;
 }
  .contenGame1{   
   
-    padding: 0px 20px 0px 20px;    
+    padding: 15px 20px 15px 20px;    
     width: 100vw;
     height: 100vh;
     background-color:  #DFD8CA ;
@@ -136,6 +131,8 @@ padding-bottom:25%;
 
 
 .displayG{
+    margin-top:10% ;
+    margin-bottom: 10%;
     width: 100%;
     height:70% ; 
     padding: 10px; 
@@ -175,6 +172,9 @@ padding-bottom:25%;
     position: relative;
     left: 30%;
     top: 25%;
+    text-align: center;
+    padding-top:15% ;
+    font-size:5vw ;
 }
 
 .texto{
@@ -198,8 +198,15 @@ padding-bottom:25%;
  
 
 }
+.clasepepe{
+    
+    width:100%;
+    height: 10%;
+    border-radius: 20px;
+}
 .resultado{
-    border-bottom: 4px solid white;
+    border-top: 4px solid white;
+    transform: rotate(180deg);
 }
 .resultadoB{
     border-top: 4px solid white;
@@ -219,13 +226,16 @@ padding-bottom:25%;
 }
 .displayIMG{
     width: 100%;
-    height: 60%;
-    background-color:#105652 ;
+    height: 60%;   
     display: flex;
     justify-content:center;
     align-items: center;
 }
 
+#img{
+    width:80% ;
+    height: 80%;
+}
 .dado{
     width: 50%;
     height:100%;
@@ -240,9 +250,48 @@ padding-bottom:25%;
 .dado2{
     border-left: 2px solid white;
 }
-.displayIMG IMG{
+.displayIMG img{
   width:50% ;
   height:30%;
   opacity:0.5 ;
 }
+
+.jugador1 P{
+    
+    font-size: 10VW;
+    color: white;
+  
+}
+
+.jugador2 P{
+    
+    color: white;
+    font-size: 10VW;
+  
+}
+.enlace{
+display: none;
+}
+.enlace1{
+   display: block;
+    width: 40vw;
+    height: 6vh;
+     position:absolute;
+     top: 45%;
+     left:30% ; 
+     display: flex; 
+     border-radius: 20px; 
+    background-color: rgb(255, 255, 255);
+    
+  
+    text-align: center;
+    justify-content: center;
+     align-items: center;
+}
+.enlace a{     
+    text-decoration: none;
+    color:black;
+    font-family: 'pixel';
+}
+
 }

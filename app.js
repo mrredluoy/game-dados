@@ -5,10 +5,18 @@ const contemGame=document.getElementById('contenGame')
 const circulo=document.querySelectorAll('.redondo')
 const circuloArray=[].slice.call(circulo);
 const[jugador1,jugador2]=circuloArray 
+const audioP=document.getElementById('audioP')
+const audiioS =document.getElementById('sonidoS')
 
-const srcArray=['img/uno.png','img/dos.png','img/tres.png','img/cuatro.png','img/cinco.png','img/seis.png']
+
+
+let activar=true
+
+const srcArray=['dados/11.png','dados/12.png','dados/13.png','dados/14.png','dados/15.png','dados/16.png']
  
 btnPlay.addEventListener('click',e=>{
+    audioP.play();
+    audioP.volume = 0.1; 
    btnPlay.style.backgroundColor='#FBF3E4';   
 
    
@@ -36,26 +44,34 @@ inicio(clas,)
 
 
 jugador1.addEventListener('click',e=>{
+    audiioS.currentTime=0
       const dado=document.getElementById('jugador2')
       const resultado=document.querySelectorAll('.numero2')
       const resultadoArray=[].slice.call(resultado);
       let[a,b]=resultadoArray
     //   console.log(resultado)
-    if (jugador1.classList.contains('primero')) {
-        pintar(dado,a,b)
+    if ((jugador1.classList.contains('primero'))&&(activar==true)) {
+        audiioS.play()
+        jugador1.textContent=parseInt(jugador1.textContent)-1
+        activar=false
+        pintar(dado,a,b,jugador1,jugador2)
     }
 })
 
 jugador2.addEventListener('click',e=>{
+    audiioS.currentTime=0
     const dado=document.getElementById('jugador1')
     const resultado=document.querySelectorAll('.numero1')
     // console.log(resultado)
     const resultadoArray=[].slice.call(resultado);
     let[a,b]=resultadoArray
     // console.log(a,b)
-    if (jugador2.classList.contains('primero')) {
+    if ((jugador2.classList.contains('primero'))&&(activar==true)) {
       
-        pintar(dado,a,b)
+        audiioS.play()
+        jugador2.textContent=parseInt(jugador2.textContent)-1
+      activar=false
+        pintar(dado,a,b,jugador2,jugador1)
     }
 })
 
@@ -95,6 +111,7 @@ let interval=setInterval(()=>{
      }
      setTimeout(()=>{        
         circuloArray[i].style.opacity='0.2'
+    
     },500)
 }
 
@@ -102,7 +119,7 @@ let interval=setInterval(()=>{
 }
 
 
-function pintar(params,a,b) {
+function pintar(params,a,b,otro,otro1) {
     params.setAttribute('src',"img/dado2.gif")
         params.style.opacity='1'
         let interval=setInterval(()=>{
@@ -114,7 +131,76 @@ function pintar(params,a,b) {
                 params.setAttribute('src',`${array}`)
                let puntos=parseInt( a.textContent)
                 a.textContent=puntos+(ramdom+1)
-                b.textContent=puntos+(ramdom+1)
+                b.textContent=puntos+(ramdom+1)               
+                if (otro.textContent=="0") {
+                   otro.style.opacity='0.2'
+                   otro.classList.remove('primero')
+                   otro1.classList.add('primero')                   
+                   params.style.opacity='0.2'
+                   otro1.style.opacity='1'
+                }
+                if (otro.textContent==otro1.textContent) {
+                    otro.classList.remove('primero')
+                    otro1.classList.remove('primero')
+                    params.setAttribute('src',`${array}`)                    
+                    otro.style.opacity='0.2'
+                    otro1.style.opacity='0.5'
+                    setTimeout(()=>{
+                       const alguien=document.getElementById('jugadorA')
+                       const alguienChill=alguien.children                    
+                       const resultadoArray=[].slice.call(alguienChill);
+                       resultadoArray.forEach(element =>alguien.removeChild(element)) 
+                       
+                       const alguien1=document.getElementById('jugadorB')
+                       const alguienChill1=alguien1.children                       
+                       const resultadoArray1=[].slice.call(alguienChill1);
+                       resultadoArray1.forEach(element =>alguien1.removeChild(element)) 
+                       alguien.classList.add('clasepepe')
+                       alguien1.classList.add('clasepepe')
+                    if (parseInt(a.textContent)>parseInt(b.textContent)) {
+                        const alguien=document.getElementById('jugadorA')
+                        const alguien1=document.getElementById('jugadorB')
+                        const display=document.querySelector('.displayG')
+
+                        const replay=document.getElementById('replay')
+                        const alguienChill1=replay.children                       
+                        const resultadoArray1=[].slice.call(alguienChill1);
+                        const enlace=document.getElementById('enlace')
+                        enlace.classList.add('enlace1')
+                        resultadoArray1.forEach(element =>replay.removeChild(element)) 
+                        replay.innerHTML=' <img id="img" src="img/dado2.gif" alt="">'
+                        display.style.opacity='0.5'
+                       
+                            alguien1.innerHTML='<p>You Win</p>'
+                            alguien1.style.backgroundColor='#105652'
+                            alguien.innerHTML='<p>Game Over</p>'
+                            alguien.style.backgroundColor='#B91646'
+             
+
+                    }else{
+                        const alguien=document.getElementById('jugadorA')
+                        const alguien1=document.getElementById('jugadorB')
+                        const display=document.querySelector('.displayG')
+                        const replay=document.getElementById('replay')
+                        const alguienChill1=replay.children                       
+                        const resultadoArray1=[].slice.call(alguienChill1);
+                        const enlace=document.getElementById('enlace')
+                        enlace.classList.add('enlace1')
+                        resultadoArray1.forEach(element =>replay.removeChild(element)) 
+                        replay.innerHTML=' <img  id="img"src="img/dado2.gif" alt="">'
+                        display.style.opacity='0.5'
+
+                        alguien.innerHTML='<p>You Win</p>'
+                        alguien.style.backgroundColor='#105652'
+                        alguien1.innerHTML='<p>Game Over</p>'
+                        alguien1.style.backgroundColor='#B91646'
+                            
+                    } 
+
+                },1000)
+                    
+                } 
+                activar=true
                 clearInterval(interval)
             }
         

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <audio  id="audioP" src="dados/Musica jazz alegre sin copyright.mp3"></audio>
+    <audio id="sonidoS" src="dados/🧿ARROJAR DADOS efecto de sonido🧿 [Dice Roll Sound Effects All Sounds].mp3"></audio>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,20 +20,20 @@
 
   <div id="contenGame" class="contenGame">
 
-      <div class="jugador1">
-          <span class="texto">Tu</span>
-          <div class="circulo"><span class="redondo"></span></div>
-          <div class="texto">Oponente</div>
+      <div  id="jugadorA" class="jugador1">
+          <span class="texto">You</span>
+          <div class="circulo"><span class="redondo">3</span></div>
+          <div class="texto">Opponent</div>
       </div>
 
        <div class="displayG">
         <div class="resultado1 resultado">
-            <span  class="numero numero1">0</span> 
+            <span  class="numero numero2">0</span> 
             <span class="linea"></span> 
-            <span class="numero numero2">0</span>
+            <span class="numero numero1">0</span>
            </div>
      
-           <div class="displayIMG">
+           <div  id="replay" class="displayIMG">
                <div class="dado dado1"><img id="jugador1" src="img/dado.png" alt=""></div>
                <div class="dado dado2"><img  id="jugador2"  src="img/dado.png" alt=""></div>
            </div>
@@ -43,15 +45,15 @@
          </div>
        </div>
 
-      <div class="jugador2">
-        <span class="texto">Tu</span>
-        <div class="circulo"><span  class="redondo"></span></div>
-        <div class="texto">Oponente</div>
+      <div id="jugadorB" class="jugador2">
+        <span class="texto">You</span>
+        <div class="circulo"><span  class="redondo">3</span></div>
+        <div class="texto">Opponent</div>
     </div>
 
 
   </div>
- 
+   <span id="enlace" class="enlace"> <a href="index.html">Replay</a></span>
 
 
   <script src="app.js"></script>
