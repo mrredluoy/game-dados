@@ -65,7 +65,7 @@ jugador2.addEventListener('click',e=>{
     // console.log(resultado)
     const resultadoArray=[].slice.call(resultado);
     let[a,b]=resultadoArray
-    // console.log(a,b)
+    console.log(a,b)
     if ((jugador2.classList.contains('primero'))&&(activar==true)) {
       
         audiioS.play()
@@ -157,7 +157,11 @@ function pintar(params,a,b,otro,otro1) {
                        resultadoArray1.forEach(element =>alguien1.removeChild(element)) 
                        alguien.classList.add('clasepepe')
                        alguien1.classList.add('clasepepe')
-                    if (parseInt(a.textContent)>parseInt(b.textContent)) {
+                       const x=document.querySelector('.numero1')
+                       const y=document.querySelector('.numero2')
+                    if (parseInt(x.textContent)>parseInt(y.textContent)) {
+                        console.log(x.textContent+'jaja')
+                        console.log(y.textContent+ 'jajja')
                         const alguien=document.getElementById('jugadorA')
                         const alguien1=document.getElementById('jugadorB')
                         const display=document.querySelector('.displayG')
@@ -177,7 +181,9 @@ function pintar(params,a,b,otro,otro1) {
                             alguien.style.backgroundColor='#B91646'
              
 
-                    }else{
+                    }else if(parseInt(x.textContent)<parseInt(y.textContent)){
+                        console.log(x.textContent)
+                        console.log(y.textContent)
                         const alguien=document.getElementById('jugadorA')
                         const alguien1=document.getElementById('jugadorB')
                         const display=document.querySelector('.displayG')
@@ -190,12 +196,17 @@ function pintar(params,a,b,otro,otro1) {
                         replay.innerHTML=' <img  id="img"src="img/dado2.gif" alt="">'
                         display.style.opacity='0.5'
 
-                        alguien.innerHTML='<p>You Win</p>'
+                        alguien.innerHTML='<p>Wou Win </p>'
                         alguien.style.backgroundColor='#105652'
                         alguien1.innerHTML='<p>Game Over</p>'
                         alguien1.style.backgroundColor='#B91646'
                             
-                    } 
+                    } else{
+                        alguien.innerHTML='<p>Ties</p>'
+                        alguien.style.backgroundColor='green'
+                        alguien1.innerHTML='<p>ties</p>'
+                        alguien1.style.backgroundColor='green'
+                    }
 
                 },1000)
                     

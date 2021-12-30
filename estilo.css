@@ -24,7 +24,15 @@
 .contenGame{
     display: none;
 }
+
+.enlace{
+    display: none;
+}
 @media screen  and (max-width:820px){
+
+.center{
+    display: none;
+}
 .contenInicio{
     
     width: 100vw;
@@ -173,7 +181,7 @@ padding-bottom:25%;
     left: 30%;
     top: 25%;
     text-align: center;
-    padding-top:15% ;
+    padding-top:6% ;
     font-size:5vw ;
 }
 
